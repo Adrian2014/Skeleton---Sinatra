@@ -22,8 +22,6 @@ data using [HTTP cookies][].
 
 ### Release 0: Determine Your Routes
 
-Feel free to use the basic Sinatra skeleton in `./source`.
-
 We only have one model, `User`, so let's focus on our controllers for a bit.  We need to support a few core actions:
 
 1. Logging in
@@ -79,6 +77,21 @@ If you don't understand what this means, first read the [using sessions
 section][using sessions] of the Sintra documentation.  Next, ask for help from
 a staff member if it's still unclear what you need to store and how you store
 it.
+
+When testing sessions, you can access the session before and after a request
+using `session`:
+
+```ruby
+describe "do things with the session" do
+  it "works" do
+    session[:wat] = 'watwat'
+    # inside the controller, session[:wat] will be set
+    get "/"
+    # afterwards, any updates the controller made will be in session
+    expect(last_response).to be_ok
+  end
+end
+```
 
 ### Release 3:  Implement Logging Out
 
