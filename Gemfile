@@ -21,4 +21,5 @@ gem 'shotgun'
 group :test do
   gem 'faker'
   gem 'rspec'
+  gem 'nokogiri', '~> 1.6.1'
 end
