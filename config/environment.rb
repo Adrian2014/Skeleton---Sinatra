@@ -18,6 +18,9 @@ require 'logger'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
+require './lib/terse_params_logger'
+use TerseParamsLogger
+
 require 'erb'
 
 # Some helper constants for path-centric logic
@@ -31,3 +34,5 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+also_reload 'app/models/*' if development?

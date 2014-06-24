@@ -16,9 +16,8 @@ gem 'activerecord', '~>4.1'
 
 gem 'rake'
 
-gem 'shotgun'
-
 group :test do
   gem 'faker'
   gem 'rspec'
+  gem 'nokogiri', '~> 1.6.1'
 end
