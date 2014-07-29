@@ -15,6 +15,9 @@ gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 
 gem 'rake'
+gem 'bcrypt'
+gem 'pry'
+gem 'sinatra-flash'
 
 group :test do
   gem 'faker'

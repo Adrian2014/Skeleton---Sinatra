@@ -1,0 +1,21 @@
+<div class="container">
+<ol>
+    <% @notes.each do |note| %>
+    <li>
+    <form name = "notes" action="/notes_edit/<%= note.id %>" method="post">
+      <input type="hidden" name="_method" value="PUT">
+      <input  name = "name" value=<%= note.name %> > </br>
+      <input  name = "text" value=<%= note.text %> >
+      <input type = "submit" value ="Edit">
+    </form>
+
+
+  <form action="/notes/delete/<%= note.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Remove">
+  </form>
+
+    </li> </br>
+    <% end %>
+</ol>
+</div>

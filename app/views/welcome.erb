@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Welcome to your note taking center</h1>
+
+
+
+
+    <%= @notes = Note.where(user_id: session[:current])
+          if @notes.length == 0
+            "You Currently have no notes"
+            end %>
+
+
+  <ol>
+    <% @notes.each do |note| %>
+    <li>Topic - <%= note.name %> </br> Note - <%= note.text %> </br> </li></br>
+    <% end %>
+  </ol>
+
+
+  <p>
+  <form name = "notes" action="/welcome" method="post">
+    <ul>
+      <li>Topic <input  name = "name" ></li>
+      <li>Note <input  name = "text" ></li>
+    </ul>
+    <input type = "submit" value ="Create">
+  </form>
+  </p>
+  <a href="/note_edit">
+   <input type="button" value="Edit Your Notes" />
+</a>
+ </div>
+
+
+
+
+
