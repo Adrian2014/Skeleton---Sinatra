@@ -1,4 +1,4 @@
-<div class="container">
+<div class="welcome-container">
   <h1>Welcome to your note taking center</h1>
 
 
@@ -18,18 +18,18 @@
 
 
   <p>
-  <form name = "notes" action="/welcome" method="post">
+  <form id="create_note" name = "notes" action="/welcome" method="post">
     <ul>
-      <li>Topic <input  name = "name" ></li>
-      <li>Note <input  name = "text" ></li>
+      <li>Topic <input  name="topic" ></li>
+      <li>Note <input name="text" ></li>
     </ul>
-    <input type = "submit" value ="Create">
+    <input  type = "submit" value ="Create">
   </form>
   </p>
   <a href="/note_edit">
    <input type="button" value="Edit Your Notes" />
-</a>
- </div>
+  </a>
+</div>
 
 
 
